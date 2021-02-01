@@ -23,7 +23,7 @@
         <p class="lead"><%= @range_area %></p>
       </div>
       <div class="col-3">
-        <h5 class="data-category">Damage</h5>
+        <h5 class="data-category">Damage/Healing</h5>
         <p class="lead"><%= @damage %></p>
       </div>
     </div>
@@ -45,8 +45,10 @@
         <p class="lead"><%= @damage_effect %></p>
       </div>
     </div>
+    <p class="lead"><strong>Castable by: </strong><%= @classes %></p>
+    <p class="lead text-danger"><%= @materials unless @materials.nil? %></p>
     <p class="lead"><%= @description %></p>
-    <p class="lead"><strong>At Higher Levels: </strong><%= @higher_level_description %></p>
+    <p class="lead"><strong><%= "At Higher Levels: " unless @higher_level_description.nil? %></strong> <%= @higher_level_description %></p>
   </div>
 
 </main><!-- /.container -->

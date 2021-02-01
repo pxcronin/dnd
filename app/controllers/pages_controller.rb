@@ -17,13 +17,19 @@ class PagesController < ApplicationController
     @level = response['data']['Level']
     @casting_time = response['data']['Casting Time']
     @range_area = response['data']['Range']
-    @damage = response['data']['Damage'].nil? ? response['data']['Healing'] : response['data']['Damage']
+    @damage = response['data']['Damage'].nil? ? response['data']['Healing'].nil? ? "See description for effect" : response['data']['Healing'] : response['data']['Damage']
     @components = response['data']['Components']
     @duration = response['data']['Duration']
     @attack_save = response['data']['Save'].nil? ? response['data']['Spell Attack'].nil? ? "None" : "Spell Attack" : "#{response['data']['Save']} Save"
     @damage_effect = response['data']['Damage Type'].nil? ? response['data']['Healing'].nil? ? "Buff/Debuff" : "Healing" : response['data']['Damage Type']
     @description = response['data']['data-description']
-    @higher_level_description = response['data']['Higher Spell Slot Desc']
+    @higher_level_description = response['data']['Higher Spell Slot Desc'].nil? ? nil : response['data']['Higher Spell Slot Desc']
+    @materials = response['data']['Material'].nil? || response['data']['Material'].include?("consumes") ? response['data']['Material'] : nil
+    @classes = response['data']['Classes']
+  end
+
+  def spell_damage
+
   end
 
   private
