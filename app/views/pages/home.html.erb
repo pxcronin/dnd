@@ -8,7 +8,7 @@
       <%= f.input :spell, as: :string %>
     <% end %>
 
-    <p class="lead"><strong><%= @name %></strong></p>
+    <p class="lead"><strong><%= @name %></strong> <em><%= "*concentration required" if @concentration %></em></p>
     <div class="row">
       <div class="col-3">
         <h5 class="data-category">Level</h5>
@@ -24,7 +24,12 @@
       </div>
       <div class="col-3">
         <h5 class="data-category">Damage/Healing</h5>
-        <p class="lead"><%= @damage %></p>
+        <div class="d-flex ">
+          <p class="lead"><%= @damage %>&nbsp;</p>
+          <p class="lead text-primary"><%= "(#{@average_dam_heal})" if @average_dam_heal %>&nbsp;</p>
+          <p class="lead text-danger"><%= @min_dam_heal %>&nbsp;</p>
+          <p class="lead text-success"><%= @max_dam_heal %></p>
+        </div>
       </div>
     </div>
     <div class="row">
@@ -49,6 +54,8 @@
     <p class="lead text-danger"><%= @materials unless @materials.nil? %></p>
     <p class="lead"><%= @description %></p>
     <p class="lead"><strong><%= "At Higher Levels: " unless @higher_level_description.nil? %></strong> <%= @higher_level_description %></p>
+  
+  <p class="lead"><%= @test %></p>
   </div>
 
 </main><!-- /.container -->
