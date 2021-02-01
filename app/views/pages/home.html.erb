@@ -2,45 +2,51 @@
 
   <div class="starter-template">
     <h1>Homepage</h1>
-    <p class="lead"><strong><%= @response['name'] %></strong></p>
+
+    <p class="lead">What spell would you like to search for?</p>
+    <%= simple_form_for :spell, url: root_path, method: :get do |f| %>
+      <%= f.input :spell, as: :string %>
+    <% end %>
+
+    <p class="lead"><strong><%= @name %></strong></p>
     <div class="row">
       <div class="col-3">
         <h5 class="data-category">Level</h5>
-        <p class="lead"><%= @response['data']['Level'] %></p>
+        <p class="lead"><%= @level %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Casting Time</h5>
-        <p class="lead"><%= @response['data']['Casting Time'] %></p>
+        <p class="lead"><%= @casting_time %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Range/Area</h5>
-        <p class="lead"><%= @response['data']['Range'] %></p>
+        <p class="lead"><%= @range_area %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Damage</h5>
-        <p class="lead"><%= @response['data']['Damage'] %></p>
+        <p class="lead"><%= @damage %></p>
       </div>
     </div>
     <div class="row">
       <div class="col-3">
         <h5 class="data-category">Components</h5>
-        <p class="lead"><%= @response['data']['Components'] %></p>
+        <p class="lead"><%= @components %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Duration</h5>
-        <p class="lead"><%= @response['data']['Duration'] %></p>
+        <p class="lead"><%= @duration %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Attack/Save</h5>
-        <p class="lead"><%= @response['data']['Save'] %></p>
+        <p class="lead"><%= @attack_save %></p>
       </div>
       <div class="col-3">
         <h5 class="data-category">Damage/Effect</h5>
-        <p class="lead"><%= @response['data']['Damage Type'] %></p>
+        <p class="lead"><%= @damage_effect %></p>
       </div>
     </div>
-    <p class="lead"><%= @response['data']['data-description'] %></p>
-    <p class="lead"><strong>At Higher Levels: </strong><%= @response['data']['Higher Spell Slot Desc'] %></p>
+    <p class="lead"><%= @description %></p>
+    <p class="lead"><strong>At Higher Levels: </strong><%= @higher_level_description %></p>
   </div>
 
 </main><!-- /.container -->

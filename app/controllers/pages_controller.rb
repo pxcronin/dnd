@@ -11,9 +11,23 @@ class PagesController < ApplicationController
   end
   
   def home
-    @response = fetch("fireball")
-    # @response = Scraper.fetch("fireball")
-    # @name = response.body.name
-    # @search = scrape("fireball")
+    # raise
+    params['spell'].nil? ? response = fetch('fireball') : response = fetch(params['spell']['spell'].gsub(" ", "_"))
+    @name = response['name']
+    @level = response['data']['Level']
+    @casting_time = response['data']['Casting Time']
+    @range_area = response['data']['Range']
+    @damage = response['data']['Damage'].nil? ? response['data']['Healing'] : response['data']['Damage']
+    @components = response['data']['Components']
+    @duration = response['data']['Duration']
+    @attack_save = response['data']['Save'].nil? ? response['data']['Spell Attack'].nil? ? "None" : "Spell Attack" : "#{response['data']['Save']} Save"
+    @damage_effect = response['data']['Damage Type'].nil? ? response['data']['Healing'].nil? ? "Buff/Debuff" : "Healing" : response['data']['Damage Type']
+    @description = response['data']['data-description']
+    @higher_level_description = response['data']['Higher Spell Slot Desc']
+  end
+
+  private
+
+  def spell_params
   end
 end
