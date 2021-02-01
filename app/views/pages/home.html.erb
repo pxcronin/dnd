@@ -1,0 +1,54 @@
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <h1>Homepage</h1>
+    <p class="lead"><strong><%= @response['name'] %></strong></p>
+    <div class="row">
+      <div class="col-3">
+        <h5 class="data-category">Level</h5>
+        <p class="lead"><%= @response['data']['Level'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Casting Time</h5>
+        <p class="lead"><%= @response['data']['Casting Time'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Range/Area</h5>
+        <p class="lead"><%= @response['data']['Range'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Damage</h5>
+        <p class="lead"><%= @response['data']['Damage'] %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <h5 class="data-category">Components</h5>
+        <p class="lead"><%= @response['data']['Components'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Duration</h5>
+        <p class="lead"><%= @response['data']['Duration'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Attack/Save</h5>
+        <p class="lead"><%= @response['data']['Save'] %></p>
+      </div>
+      <div class="col-3">
+        <h5 class="data-category">Damage/Effect</h5>
+        <p class="lead"><%= @response['data']['Damage Type'] %></p>
+      </div>
+    </div>
+    <p class="lead"><%= @response['data']['data-description'] %></p>
+    <p class="lead"><strong>At Higher Levels: </strong><%= @response['data']['Higher Spell Slot Desc'] %></p>
+  </div>
+
+</main><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
