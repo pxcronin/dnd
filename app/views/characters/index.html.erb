@@ -1,7 +1,12 @@
 <main role="main" class="container">
 
   <div class="starter-template">
-    <h1>What's my damage?</h1>
+    <h1>Characters</h1>
+    <ul class="list-unstyled">
+      <% @characters.each do |char| %>
+      <li class="lead"><%= char.name %>, the <%= char.alignment %> <%= char.race %></li>
+      <% end %>
+    </ul>
     
   </div>
 

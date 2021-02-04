@@ -1,7 +1,12 @@
 <main role="main" class="container">
 
   <div class="starter-template">
-    <h1>What's my damage?</h1>
+    <h1><%= @character.name %></h1>
+    <ul class="list-unstyled">
+      <li class="lead"><strong>Race:</strong> <%= @character.race %></li>
+      <li class="lead"><strong>Class:</strong> <%= @character.character_class %></li>
+      <li class="lead"><strong>Level:</strong> <%= @character.level %></li>
+    </ul>
     
   </div>
 

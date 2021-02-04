@@ -1,0 +1,21 @@
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <%= simple_form_for @character do |f| %>
+      <%= f.input :name %>
+      <%= f.input :race, collection: %w(Dragonborn Dwarf Elf Gnome Half-Elf Half-Orc Halfling Human Tiefling Bugbear Centaur Goblin Grung Hobgoblin Kobold Lizardfolk Minotaur Orc Yuan-Ti Aarakocra Aasimar Firbolg Genasi Gith Goliath Kalashtar Kenku Leonin Locathah Loxodon Satyr Shifter Tabaxi Tortle Triton Vedalken Warforged) %>
+      <%= f.input :character_class, label: "Class" %>
+      <%= f.input :alignment, collection: ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"] %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</main><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
