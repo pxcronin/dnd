@@ -1,0 +1,18 @@
+<main role="main" class="container">
+
+  <div class="starter-template">
+    <%= simple_form_for @character do |f| %>
+      <%= f.input :name %>
+      <%= f.input :race, collection: %w(Dragonborn Dwarf Elf Gnome Half-Elf Half-Orc Halfling Human Tiefling Bugbear Centaur Goblin Grung Hobgoblin Kobold Lizardfolk Minotaur Orc Yuan-Ti Aarakocra Aasimar Firbolg Genasi Gith Goliath Kalashtar Kenku Leonin Locathah Loxodon Satyr Shifter Tabaxi Tortle Triton Vedalken Warforged) %>
+      <%= f.input :character_class, label: "Class" %>
+      <%= f.input :alignment, collection: ["Lawful Good", "Neutral Good", "Chaotic Good", "Lawful Neutral", "Neutral", "Chaotic Neutral", "Lawful Evil", "Neutral Evil", "Chaotic Evil"] %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+
+</main><!-- /.container -->
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
